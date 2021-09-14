@@ -17,13 +17,12 @@ app.use(passport.initialize());
 
 passport.use(new facebookStrategy({
 
-    // pull in our app id and secret from our auth.js file
     clientID        : "############",
     clientSecret    : "###########################",
     callbackURL     : "http://localhost:5000/facebook/callback",
     profileFields: ['id', 'displayName', 'name', 'gender', 'picture.type(large)','email']
 
-},// facebook will send back the token and profile
+},
 function(token, refreshToken, profile, done) {
 
     //
